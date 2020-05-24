@@ -1,3 +1,3 @@
 # JavaScript
 
-<h2>Javascript codes in here.</h2>
+<h3>Javascript codes in here.</h3>
