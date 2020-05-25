@@ -6,4 +6,4 @@ Example -
 
 fibonacciGenerator(3); 
 
-//will give output an array = ["0","1","1"]
+will give output an array = ["0","1","1"]
