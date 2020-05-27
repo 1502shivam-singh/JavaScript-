@@ -1,8 +1,12 @@
 function bmiCalculator (weight, height) {
+    
     var bmi=(weight/(height*height));
     var rounded = bmi.toFixed(1);
-  alert(rounded);
-  alert(typeof(rounded));
+    
+    //Used for debuging
+    //alert(rounded);  
+    //alert(typeof(rounded)); 
+    
     var bmir=parseFloat(rounded);
   	alert(typeof(bmir));
     if(bmir<18.5){
