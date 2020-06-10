@@ -1,3 +1,3 @@
 # JavaScript
 
-<h3>Javascript codes in here, tryouts, profuct modules and other code snippets.</h3>
+<h3>Javascript codes in here, concept tryouts, product modules and other code snippets.</h3>
