@@ -1,6 +1,6 @@
 # BMI Calculator
 
-BMI Calculator made in JS that tells you whether you are -
+BMI Calculator made in javascript that tells you whether you are -
 
 1) Under weight
 2) Normal weight
