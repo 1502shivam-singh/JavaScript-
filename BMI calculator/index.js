@@ -10,7 +10,7 @@ function bmiCalculator (weight, height) {
     var bmir=parseFloat(rounded);
   	//alert(typeof(bmir));  Debugging
     if(bmir<18.5){
-        return "Yout BMI is "+bmir+", so you are underweight.";
+        return "Your BMI is "+bmir+", so you are underweight.";
     }
     else if((bmir=>18.5) && (bmir<25)){return "Your BMI is "+bmir+", so you have a normal weight.";}
     else 
