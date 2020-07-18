@@ -2,6 +2,8 @@ const express = require("express");
 const bodyParse=require("body-parser")
 const app = express();
 
+app.use(express.static("public"));
+
 app.use(bodyParse.urlencoded({extended: true}));
 
 app.get("/",function(req,res){
