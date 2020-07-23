@@ -1,1 +1,301 @@
+﻿<!DOCTYPE html>
 
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title id="title">Media Player</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <script>let $ = require('jquery');</script>
+    <script src="index.js"></script>
+    <!-- <script src="app\node_modules\jquery\dist\jquery.js" charset="utf-8"></script> -->
+
+</head>
+
+<body>
+    <video id="video" width="550" height="352"></video>
+    <audio id="audio"></audio>
+
+    <div id="ui_cnt">
+      <div class="flexing">
+        <input id='seek_bar' type="range" step="0.1">
+
+        <div id='time'> 00 : 00 : 00 / 00 : 00 : 00 </div>
+      </div>
+
+        <div id="btn_bar">
+          <div class="left_buttons">
+            <button class="nav_btn" id="pause_btn"></button>
+              <script>
+                $('#pause_btn').on({
+                  click: function(){
+                    if(document.getElementById("pause_btn").style.backgroundImage == "")
+                    {
+                      document.getElementById("pause_btn").style.backgroundImage = "url(../assets/ui/playing_bl_01.png)";
+                    }
+                    else{
+                      document.getElementById("pause_btn").style.backgroundImage = "";
+                    }
+                  },
+                  mousedown: function() {
+                  // :active state
+                  if(document.getElementById("pause_btn").style.backgroundImage == "")
+                  {
+                    //setTimeout(function(){document.getElementById("pause_btn").style.backgroundImage = "url(../assets/ui/playing_bl_03.png)";},50);
+                    document.getElementById("pause_btn").style.backgroundImage = "url(../assets/ui/playing_bl_03.png)";
+                    setTimeout(function(){document.getElementById("pause_btn").style.backgroundImage = "url(../assets/ui/playing_bl_01.png)";},100);
+                  }
+                  else{
+                    //setTimeout(function(){document.getElementById("pause_btn").style.backgroundImage = "url(../assets/ui/pausing_bl_03.png)";},50);
+                    document.getElementById("pause_btn").style.backgroundImage = "url(../assets/ui/pausing_bl_03.png)";
+                    setTimeout(function(){document.getElementById("pause_btn").style.backgroundImage = "";},100);
+                    }
+                  },
+                  mouseup: function() {
+                  // on click release
+                  if(document.getElementById("pause_btn").style.backgroundImage == "")
+                  {
+                    document.getElementById("pause_btn").style.backgroundImage = "url(../assets/ui/playing_bl_03.png)";
+                  }
+                  else{
+                    document.getElementById("pause_btn").style.backgroundImage = "";
+                  }
+                  }
+                  })
+           //        if(document.getElementById("pause_btn").style.backgroundImage == ""){
+           //        $("#pause_btn").hover(function(){
+           // // or hover instead of enter/leave
+           //            document.getElementById("pause_btn").style.backgroundImage = "url(../assets/ui/pausing_bl_02.png)";}
+           //        ,function(){
+           //          document.getElementById("pause_btn").style.backgroundImage = "";
+           //        })
+           //      }
+           //      else{
+           //        $("#pause_btn").hover(function(){
+           // // or hover instead of enter/leave
+           //            document.getElementById("pause_btn").style.backgroundImage = "url(../assets/ui/playing_bl_02.png)";}
+           //        ,function(){
+           //          document.getElementById("pause_btn").style.backgroundImage = "url(../assets/ui/playing_bl_01.png)";
+           //        })
+           //      }
+
+              </script>
+            <button class="nav_btn"  id="playback_btn"></button>
+            <script>
+            $('#playback_btn').on({
+              click: function(){
+                //API endpoint for playback_btn
+              },
+              mousedown: function() {
+                document.getElementById("playback_btn").style.backgroundImage = "url(../assets/ui/playback_bl_03.png)";
+                setTimeout(function(){document.getElementById("playback_btn").style.backgroundImage = "url(../assets/ui/playback_bl_01.png)";},100);
+              },
+              })
+              $("#playback_btn").hover(function(){
+                document.getElementById("playback_btn").style.backgroundImage = "url(../assets/ui/playback_bl_02.png)";}
+                ,function(){
+                document.getElementById("playback_btn").style.backgroundImage = "";
+               })
+            </script>
+            <button class="nav_btn" id="always_on_top_btn"></button>
+              <script>
+              $('#always_on_top_btn').on({
+                click: function(){
+                  if(document.getElementById("always_on_top_btn").style.backgroundImage == "")
+                  {
+                    document.getElementById("always_on_top_btn").style.backgroundImage = "url(../assets/ui/always_on_top_active_bl_03.png)";
+                  }
+                  else{
+                    document.getElementById("always_on_top_btn").style.backgroundImage = "";
+                  }
+                    //API endpoint for always_on_top_btn
+                }
+              });
+              </script>
+            <button class="nav_btn"  id="next_btn"></button>
+            <script>
+            $('#next_btn').on({
+              click: function(){
+                  //API endpoint for next_btn
+              },
+              mousedown: function() {
+                document.getElementById("next_btn").style.backgroundImage = "url(../assets/ui/standard_player_bl_03.png)";
+                setTimeout(function(){document.getElementById("next_btn").style.backgroundImage = "url(../assets/ui/standard_player_bl_01.png)";},100);
+                  }
+                })
+                $("#next_btn").hover(function(){
+                  document.getElementById("next_btn").style.backgroundImage = "url(../assets/ui/standard_player_bl_02.png)";}
+                  ,function(){
+                  document.getElementById("next_btn").style.backgroundImage = "";
+                 })
+            </script>
+            <button class="nav_btn"  id="loop_btn"></button>
+              <script>
+              $('#loop_btn').on({
+                click: function(){
+                    //API endpoint for loop_btn
+                },
+                mousedown: function() {
+                  document.getElementById("loop_btn").style.backgroundImage = "url(../assets/ui/sync_target_bl_03.png)";
+                  setTimeout(function(){document.getElementById("loop_btn").style.backgroundImage = "url(../assets/ui/sync_target_bl_01.png)";},100);
+                    }
+                  })
+                  $("#loop_btn").hover(function(){
+                    document.getElementById("loop_btn").style.backgroundImage = "url(../assets/ui/sync_target_bl_02.png)";}
+                    ,function(){
+                    document.getElementById("loop_btn").style.backgroundImage = "";
+                   })
+              </script>
+            <button class="nav_btn"  id="sync_button"></button>
+              <script>
+                if(true){    //Case-1 when sync not detecting timer
+                  $('#sync_button').on({
+                    click: function(){
+                        //API endpoint for sync_button
+                    },
+                    mousedown: function() {
+                      document.getElementById("sync_button").style.backgroundImage = "url(../assets/ui/sync_deactive_bl_03.png)";
+                      setTimeout(function(){document.getElementById("sync_button").style.backgroundImage = "url(../assets/ui/sync_deactive_bl_01.png)";},100);
+                        }
+                      })
+                      $("#sync_button").hover(function(){
+                        document.getElementById("sync_button").style.backgroundImage = "url(../assets/ui/sync_deactive_bl_02.png)";}
+                        ,function(){
+                        document.getElementById("sync_button").style.backgroundImage = "";
+                       })
+                }
+                else if (false) { //Case-2 when sync detecting/pausing the timer
+                  $('#sync_button').on({
+                    click: function(){
+                        //API endpoint for sync_button
+                    },
+                    mousedown: function() {
+                      document.getElementById("sync_button").style.backgroundImage = "url(../assets/ui/sync_active_bl_03.png)";
+                      setTimeout(function(){document.getElementById("sync_button").style.backgroundImage = "url(../assets/ui/sync_active_bl_01.png)";},100);
+                        }
+                      })
+                      $("#sync_button").hover(function(){
+                        document.getElementById("sync_button").style.backgroundImage = "url(../assets/ui/sync_active_bl_02.png)";}
+                        ,function(){
+                        document.getElementById("sync_button").style.backgroundImage = "";
+                       })
+                }
+                else {  //Case-3 when syncing the timer
+                  $('#sync_button').on({
+                    click: function(){
+                        //API endpoint for sync_button
+                    },
+                    mousedown: function() {
+                      document.getElementById("sync_button").style.backgroundImage = "url(../assets/ui/sync_sync_bl_03.png)";
+                      setTimeout(function(){document.getElementById("sync_button").style.backgroundImage = "url(../assets/ui/sync_sync_bl_01.png)";},100);
+                        }
+                      })
+                      $("#sync_button").hover(function(){
+                        document.getElementById("sync_button").style.backgroundImage = "url(../assets/ui/sync_sync_bl_02.png)";}
+                        ,function(){
+                        document.getElementById("sync_button").style.backgroundImage = "";
+                       })
+                }
+              </script>
+          </div>
+          <div class="right_butttons">
+            <button class="nav_btn"  id="snapshot"></button>
+              <script>
+              $('#snapshot').on({
+                click: function(){
+                    //API endpoint for snapshot
+                },
+                mousedown: function() {
+                  document.getElementById("snapshot").style.backgroundImage = "url(../assets/ui/snapshot_bl_03.png)";
+                  setTimeout(function(){document.getElementById("snapshot").style.backgroundImage = "url(../assets/ui/snapshot_bl_01.png)";},100);
+                    }
+                  })
+                  $("#snapshot").hover(function(){
+                    document.getElementById("snapshot").style.backgroundImage = "url(../assets/ui/snapshot_bl_02.png)";}
+                    ,function(){
+                    document.getElementById("snapshot").style.backgroundImage = "";
+                   })
+              </script>
+            <button class="nav_btn"  id="vidosetting"></button>
+              <script>
+              $('#vidosetting').on({
+                click: function(){
+                    //API endpoint for vidosetting
+                },
+                mousedown: function() {
+                  document.getElementById("vidosetting").style.backgroundImage = "url(../assets/ui/video_setting_bl_03.png)";
+                  setTimeout(function(){document.getElementById("vidosetting").style.backgroundImage = "url(../assets/ui/video_setting_bl_01.png)";},100);
+                    }
+                  })
+                  $("#vidosetting").hover(function(){
+                    document.getElementById("vidosetting").style.backgroundImage = "url(../assets/ui/video_setting_bl_02.png)";}
+                    ,function(){
+                    document.getElementById("vidosetting").style.backgroundImage = "";
+                   })
+              </script>
+            <button class="nav_btn"  id="preference"></button>
+              <script>
+              $('#preference').on({
+                click: function(){
+                    //API endpoint for preference
+                },
+                mousedown: function() {
+                  document.getElementById("preference").style.backgroundImage = "url(../assets/ui/preferences_bl_03.png)";
+                  setTimeout(function(){document.getElementById("preference").style.backgroundImage = "url(../assets/ui/preferences_bl_01.png)";},100);
+                    }
+                  })
+                  $("#preference").hover(function(){
+                    document.getElementById("preference").style.backgroundImage = "url(../assets/ui/preferences_bl_02.png)";}
+                    ,function(){
+                    document.getElementById("preference").style.backgroundImage = "";
+                   })
+              </script>
+            <button class="nav_btn"  id="quality">360p</button>
+              <script>
+              $('#quality').on({
+                click: function(){
+                    //API endpoint for quality
+                },
+                mousedown: function() {
+                  document.getElementById("quality").style.backgroundImage = "url(../assets/ui/quality_bg_bl_03.png)";
+                  setTimeout(function(){document.getElementById("quality").style.backgroundImage = "url(../assets/ui/quality_bg_bl_01.png)";},100);
+                    }
+                  })
+                  $("#quality").hover(function(){
+                    document.getElementById("quality").style.backgroundImage = "url(../assets/ui/quality_bg_bl_02.png)";}
+                    ,function(){
+                    document.getElementById("quality").style.backgroundImage = "";
+                   })
+              </script>
+            <button class="nav_btn" id="audio"></button>
+              <script>
+              $("#audio").on({
+                click: function(){
+                    if(document.getElementById("audio").style.backgroundImage == "")
+                    {
+                      document.getElementById("audio").style.backgroundImage = "url(../assets/ui/volume_on_bl_01.png)";
+                      //API endpoint for audio
+                    }
+                    else{
+                      document.getElementById("audio").style.backgroundImage = "";
+                      //API endpoint for audio
+                    }
+                  }
+                })
+              </script>
+            <input class="volume-bar" type="range" min="0" max="10">
+          </div>
+        </div>
+
+    <div class="bottom-bar">
+      <button class="nav_btn" id="left-ext"></button>
+        <input class="url_bar" type="text" placeholder="Search..">
+      <button class="nav_btn" id="right-ext"></button>
+    </div>
+
+    </div>
+
+    <!--  -->
+</body>
+
+</html>
