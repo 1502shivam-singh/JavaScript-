@@ -1,0 +1,29 @@
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 143.14 143.14">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="941.09" y1="668.52" x2="941.09" y2="540.12" gradientUnits="userSpaceOnUse">
+      <stop offset="0"/>
+      <stop offset="0.11" stop-color="#040000"/>
+      <stop offset="0.24" stop-color="#100"/>
+      <stop offset="0.37" stop-color="#270000"/>
+      <stop offset="0.5" stop-color="#460000"/>
+      <stop offset="0.63" stop-color="#6d0000"/>
+      <stop offset="0.77" stop-color="#9d0000"/>
+      <stop offset="0.91" stop-color="#d40000"/>
+      <stop offset="1" stop-color="red"/>
+    </linearGradient>
+  </defs>
+  <title>play_btn</title>
+  <g>
+    <rect class="cls-1" width="143.14" height="143.14"/>
+    <path id="play" class="cls-2" d="M888.23,540.4l107.72,62.19a2,2,0,0,1,0,3.46L888.23,668.25a2,2,0,0,1-3-1.73V542.13A2,2,0,0,1,888.23,540.4Z" transform="translate(-859.52 -532.75)"/>
+  </g>
+</svg>

@@ -1,0 +1,37 @@
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 143.14 143.14">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient-2);
+      }
+
+      .cls-3 {
+        fill: none;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="34.25" y1="137.03" x2="34.25" y2="5.98" gradientUnits="userSpaceOnUse">
+      <stop offset="0"/>
+      <stop offset="0.11" stop-color="#040000"/>
+      <stop offset="0.24" stop-color="#100"/>
+      <stop offset="0.37" stop-color="#270000"/>
+      <stop offset="0.5" stop-color="#460000"/>
+      <stop offset="0.63" stop-color="#6d0000"/>
+      <stop offset="0.77" stop-color="#9d0000"/>
+      <stop offset="0.91" stop-color="#d40000"/>
+      <stop offset="1" stop-color="red"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="108.89" y1="137.16" x2="108.89" y2="6.11" xlink:href="#linear-gradient"/>
+  </defs>
+  <title>pause_btn</title>
+  <g>
+    <g id="pause">
+      <rect class="cls-1" x="15.29" y="5.98" width="37.91" height="131.05" rx="2" ry="2"/>
+      <rect class="cls-2" x="89.93" y="6.11" width="37.91" height="131.05" rx="2" ry="2"/>
+    </g>
+    <rect class="cls-3" width="143.14" height="143.14"/>
+  </g>
+</svg>

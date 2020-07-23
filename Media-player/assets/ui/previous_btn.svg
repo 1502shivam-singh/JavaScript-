@@ -1,0 +1,62 @@
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 85.88 85.88">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-3 {
+        fill: url(#linear-gradient-2);
+      }
+
+      .cls-4 {
+        fill: url(#linear-gradient-3);
+      }
+
+      .cls-5 {
+        fill: url(#linear-gradient-4);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="726.63" y1="647.49" x2="726.63" y2="571.62" gradientUnits="userSpaceOnUse">
+      <stop offset="0"/>
+      <stop offset="0.23" stop-color="#030303"/>
+      <stop offset="0.4" stop-color="#0d0d0d"/>
+      <stop offset="0.56" stop-color="#1d1d1d"/>
+      <stop offset="0.7" stop-color="#343434"/>
+      <stop offset="0.84" stop-color="#515151"/>
+      <stop offset="0.97" stop-color="#757575"/>
+      <stop offset="1" stop-color="gray"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="726.63" y1="647.49" x2="726.63" y2="571.62" gradientTransform="translate(1390.28 1219.11) rotate(180)" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-3" x1="132.32" y1="647.37" x2="132.32" y2="571.74" gradientTransform="matrix(-1, 0, 0, 1, 861.19, 0)" gradientUnits="userSpaceOnUse">
+      <stop offset="0"/>
+      <stop offset="0.11" stop-color="#040000"/>
+      <stop offset="0.24" stop-color="#100"/>
+      <stop offset="0.37" stop-color="#270000"/>
+      <stop offset="0.5" stop-color="#460000"/>
+      <stop offset="0.63" stop-color="#6d0000"/>
+      <stop offset="0.77" stop-color="#9d0000"/>
+      <stop offset="0.91" stop-color="#d40000"/>
+      <stop offset="1" stop-color="red"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-4" x1="166.05" y1="647.49" x2="166.05" y2="571.62" gradientTransform="matrix(1, 0, 0, -1, 529.09, 1219.11)" xlink:href="#linear-gradient-3"/>
+  </defs>
+  <title>previous_btn</title>
+  <g>
+    <rect class="cls-1" x="683.69" y="566.61" width="85.88" height="85.88" transform="translate(769.57 652.49) rotate(-180)"/>
+    <g>
+      <g>
+        <path class="cls-2" d="M759.89,572l-65,37.54,65,37.54a2,2,0,0,0,3-1.73V573.74A2,2,0,0,0,759.89,572Z" transform="translate(-683.69 -566.61)"/>
+        <rect class="cls-3" x="690.37" y="571.62" width="9.55" height="75.87" rx="2" ry="2" transform="translate(706.6 652.49) rotate(-180)"/>
+      </g>
+      <g>
+        <path class="cls-4" d="M759.89,572l-65,37.54,65,37.54a2,2,0,0,0,3-1.73V573.74A2,2,0,0,0,759.89,572Z" transform="translate(-683.69 -566.61)"/>
+        <rect class="cls-5" x="690.37" y="571.62" width="9.55" height="75.87" rx="2" ry="2" transform="translate(706.6 652.49) rotate(-180)"/>
+      </g>
+    </g>
+  </g>
+</svg>

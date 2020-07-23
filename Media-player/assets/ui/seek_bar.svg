@@ -1,0 +1,30 @@
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1178 33">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: red;
+      }
+
+      .cls-2 {
+        fill: url(#radial-gradient);
+      }
+    </style>
+    <radialGradient id="radial-gradient" cx="457.75" cy="16.5" r="16.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0"/>
+      <stop offset="0.43" stop-color="#020202"/>
+      <stop offset="0.58" stop-color="#090909"/>
+      <stop offset="0.69" stop-color="#141414"/>
+      <stop offset="0.78" stop-color="#252525"/>
+      <stop offset="0.86" stop-color="#3b3b3b"/>
+      <stop offset="0.92" stop-color="#575757"/>
+      <stop offset="0.98" stop-color="#767676"/>
+      <stop offset="1" stop-color="gray"/>
+    </radialGradient>
+  </defs>
+  <title>seek_bar</title>
+  <g id="seek_bar">
+    <rect id="track_length" y="11.27" width="1178" height="10" rx="2" ry="2"/>
+    <rect id="seek_length" class="cls-1" y="11.27" width="458" height="10" rx="2" ry="2"/>
+    <circle id="seek_button" class="cls-2" cx="457.75" cy="16.5" r="16.5"/>
+  </g>
+</svg>
