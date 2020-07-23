@@ -1,0 +1,365 @@
+﻿html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    background: black;
+}
+
+
+/* Setup video */
+
+#video {
+    display: block;
+    position: absolute;
+}
+
+
+/* Setup ui container */
+
+#ui_cnt {
+  height: 75px;
+  position: fixed;
+  bottom: 0;
+  overflow: hidden;
+  width: 100%;
+  padding: 1px;
+  background: #5f705e;
+  opacity: 0.7;
+}
+
+.hide {
+    opacity: 0;
+}
+
+.hide:hover {
+    opacity: 1;
+}
+
+
+/* Setup the seekbar */
+
+#seek_bar {
+  -webkit-appearance: inherit;
+      /* display: inline; */
+      width: 89%;
+      /* left: 0%; */
+      /* transform: translate(-142%); */
+      height: 7px;
+      border-radius: 0px;
+      /* margin: 10px 0px 10px 5px; */
+      background: linear-gradient(to right, #feb000 34%, black 0%);
+      /* background-size: 200% 100%; */
+      /* background-position: left bottom; */
+      cursor: pointer;
+}
+
+@media (max-width: 1358px) {
+  #seek_bar {
+    -webkit-appearance: inherit;
+        /* display: inline; */
+        width: 80%;
+        /* left: 0%; */
+        /* transform: translate(-142%); */
+        height: 7px;
+        border-radius: 0px;
+        /* margin: 10px 0px 10px 5px; */
+        background: linear-gradient(to right, #feb000 34%, black 0%);
+        /* background-size: 200% 100%; */
+        /* background-position: left bottom; */
+        cursor: pointer;
+  }
+}
+
+@media (max-width: 800px) {
+  #seek_bar {
+    -webkit-appearance: inherit;
+        /* display: inline; */
+        width: 73%;
+        /* left: 0%; */
+        /* transform: translate(-142%); */
+        height: 7px;
+        border-radius: 0px;
+        /* margin: 10px 0px 10px 5px; */
+        background: url(../ui/play_bar_bl.png);
+        /* background-size: 200% 100%; */
+        /* background-position: left bottom; */
+        cursor: pointer;
+  }
+}
+
+.flexing{
+  display: flex;
+}
+
+#seek_bar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background: url(../ui/seek_button.svg);
+    filter: grayscale(100%) brightness(2.5);
+    cursor: pointer;
+}
+
+#seek_bar::-webkit-slider-thumb:hover {
+    filter: grayscale(100%) brightness(3);
+}
+
+#seek_bar::-webkit-slider-thumb:active {
+    filter: grayscale(100%) brightness(1);
+}
+
+#seek_bar:focus {
+    outline: none;
+}
+
+
+/* Set the time display */
+
+#time {
+  /* position: relative; */
+  /* display: inline-block; */
+  font: 12px Arial;
+  margin-left: 1%;
+  /* margin-right: auto; */
+  color: white;
+  cursor: default;
+  flex-grow: 1;
+}
+
+
+/* Set dropdown for speed */
+
+#speed_cnt {
+    position: relative;
+    display: inline-block;
+    font: 12px Arial;
+    margin-right: 10px;
+    color: gray;
+    float: right;
+}
+
+#speed_btn {
+    display: inline-block;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    padding: 0;
+    font: 12px Arial;
+    color: gray;
+}
+
+#speed_btn::after {
+    content: 'x';
+}
+
+#speed_btn:hover {
+    color: red;
+}
+
+.dropdown_content {
+    display: none;
+    position: relative;
+    background-color: transparent;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.show {
+    display: inline-block;
+}
+
+.dropdown_content li {
+    display: inline-block;
+}
+
+.dropdown_content li::after {
+    content: 'x';
+}
+
+.dropdown_content li:hover {
+    color: red;
+}
+
+
+/* Setup the ui buttons */
+
+#btn_bar {
+  display: flex;
+  align-items: flex-start;
+  /* position: relative; */
+  /* left: -36.7%; */
+  /* transform: translate(-50%); */
+  /* width: 100px; */
+  user-select: none;
+  white-space: nowrap;
+  /* justify-content: space-evenly; */
+  /* align-items: left; */
+}
+
+#btn_bar0 {
+    display: inline-flex;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    width: 100px;
+    user-select: none;
+    white-space: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.nav_btn {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  height: 25px;
+  width: 25px;
+  /* filter: grayscale(100%) brightness(2.5); */
+  padding: 0;
+  flex-shrink: 0;
+  margin: 0 2.5px 0 2.5px;
+}
+
+/* .nav_btn:hover {
+    filter: grayscale(100%) brightness(3);
+}
+
+.nav_btn:active {
+    filter: grayscale(100%) brightness(1);
+}
+
+.toggled {
+    filter: grayscale(0) brightness(2.5);
+}
+
+.toggled:hover {
+    filter: grayscale(0) brightness(3);
+}
+
+.toggled:active {
+    filter: grayscale(0) brightness(1);
+} */
+
+.right_butttons{
+  /* flex-grow: 1; */
+/* margin-left: 50%; */
+/* align-content: center; */
+/* padding-left: 69%; */
+    margin-left: auto;
+    display: flex;
+}
+
+.left_buttons{
+
+}
+
+.volume-bar{
+  width: 62px;
+  background: url(../ui/volume_bar_bl_01.png);
+}
+
+.bottom-bar{
+  display: flex;
+}
+
+.url_bar{
+  background: url(../ui/url_bar_bl.png);
+  height: 21px;
+  width: 486px;
+  color: white;
+}
+/* Set image for each button */
+
+#pause_btn {
+  /* margin-right: 20px; */
+background-image: url(../ui/pausing_bl_01.png);
+}
+
+/* #pause_btn:hover{
+  background-image: url(../ui/pausing_bl_02.png);
+} */
+
+#playback_btn {
+    background-image: url(../ui/playback_bl_01.png);
+}
+/*
+#playback_btn:hover{
+  background-image: url(../ui/playback_bl_02.png);
+} */
+
+#always_on_top_btn {
+    background-image: url(../ui/always_on_top_deactive_bl_01.png);
+  /* height: 35px; */
+  /* width: 35px; */
+}
+
+#always_on_top_btn:hover{
+  background-image: url(../ui/always_on_top_active_bl_02.png);
+}
+
+#next_btn {
+  background-image: url(../ui/standard_player_bl_01.png);
+}
+
+/* #next_btn:hover {
+  background-image: url(../ui/standard_player_bl_02.png);
+} */
+
+#loop_btn {
+  /* margin-left: 20px; */
+  background-image: url(../ui/sync_target_bl_01.png);
+}
+
+#sync_button {
+  /* margin-left: 20px; */
+  background-image: url(../ui/sync_deactive_bl_01.png);
+}
+
+#snapshot {
+  /* margin-left: 20px; */
+  background-image: url(../ui/snapshot_bl_01.png);
+}
+
+#vidosetting {
+    /* margin-left: 20px; */
+    background-image: url(../ui/video_setting_bl_01.png);
+}
+
+#preference {
+    /* margin-left: 20px; */
+    background-image: url(../ui/preferences_bl_01.png);
+}
+
+#quality {
+    /* margin-left: 20px; */
+    background-image: url(../ui/quality_bg_bl_01.png);
+    color: white;
+    font-size: 9px;
+}
+
+#audio {
+    /* margin-left: 20px; */
+    background-image: url(../ui/volume_on_bl_02.png);
+}
+
+#left-ext {
+    /* margin-left: 20px; */
+  height: 37px;
+  background-image: url(../ui/edge_bl_l.png);
+}
+
+#right-ext {
+  margin-left: auto;
+  /* margin-left: 20px; */
+  height: 37px;
+  background-image: url(../ui/edge_bl_r.png);
+}
