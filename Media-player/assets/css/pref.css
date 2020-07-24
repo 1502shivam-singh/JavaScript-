@@ -1,0 +1,98 @@
+body{
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  background-color: #1f1e1e;;
+}
+
+.nav_btn {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  height: 25px;
+  width: 60px;
+  /* filter: grayscale(100%) brightness(2.5); */
+  padding: 0;
+  flex-shrink: 0;
+  margin: 0 2.5px 0 2.5px;
+}
+
+#title-bar{
+  display: flex;
+  -webkit-app-region: drag;
+  background: #100f0f;
+}
+
+#lang-btn{
+  background-color: rgba(109, 109, 109, 0.61);
+  margin-right: 7px;
+}
+#lang-btn:hover{
+  border-color: blue;
+}
+
+#web-btn{
+  background-color: rgba(109, 109, 109, 0.61);
+}
+#web-btn:hover{
+  border-color: blue;
+}
+
+#sign-btn{
+  background-color: rgba(109, 109, 109, 0.61);
+}
+#sign-btn:hover{
+  border-color: blue;
+}
+
+#hotkey-btn{
+  background-color: rgba(109, 109, 109, 0.61);
+}
+#hotkey-btn:hover{
+  border-color: blue;
+}
+
+#theme-btn{
+  background-color: rgba(109, 109, 109, 0.61);
+}
+#theme-btn:hover{
+  border-color: blue;
+}
+
+#Others-btn{
+  background-color: rgba(109, 109, 109, 0.61);
+}
+#Others-btn:hover{
+  border-color: blue;
+}
+
+#close-btn{
+  background: url(../ui/header_close_bl_01.png);
+  height: 20px;
+}
+#close-btn:hover{
+  border-color: blue;
+}
+
+.option-name{
+  color: white;
+}
+
+.close_btn_right{
+  margin-left: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  height: 25px;
+  width: 25px;
+  /* filter: grayscale(100%) brightness(2.5); */
+  padding: 0;
+  flex-shrink: 0;
+}
