@@ -4,42 +4,81 @@
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" href="../assets/css/pref.css">
+    <script>let $ = require('jquery');</script>
+    <script src="index.js"></script>
   </head>
   <body>
     <div id="title-bar">
      <div id="title-bar-btns">
-       <button class="nav_btn" id="lang-btn"><p>
+       <button class="nav_btn" id="lang-btn">
+       <p class="option-name">Language</p></button>
 
-       <p class="option-name">Language</p>e</button>
-       <button class="nav_btn" id="web-btn"><p>
-
+       <button class="nav_btn" id="web-btn">
        <p class="option-name">Website</p></button>
-       <button class="nav_btn" id="sign-btn"><p>
 
-       <p class="option-name">Signin</p>/button>
-       <button class="nav_btn" id="hotkey-btn"><p>
+       <button class="nav_btn" id="sign-btn">
+       <p class="option-name">Signin</p></button>
 
+       <button class="nav_btn" id="hotkey-btn">
        <p class="option-name">Hotkeys</p></button>
-       <button class="nav_btn" id="theme-btn"><p>
 
-       <p class="option-name">Theme</p>button>
-       <button class="nav_btn" id="Others-btn"><p>
+       <button class="nav_btn" id="theme-btn">
+       <p class="option-name">Theme</p></button>
 
-       <p class="option-name">Others</p>/button>
+       <button class="nav_btn" id="Others-btn">
+       <p class="option-name">Others</p></button>
      </div>
      <div class="close_btn_right">
        <button class="nav_btn" id="close-btn"></button>
+       <script>
+       (function () {
+           // Retrieve remote BrowserWindow
+           const {BrowserWindow} = require('electron').remote
+
+           function init() {
+               // Close app
+               $('#close-btn').on({
+                 click: function(){
+                       var window = BrowserWindow.getFocusedWindow();
+                       window.close();
+                 },
+                 mousedown: function() {
+                   document.getElementById("close-btn").style.backgroundImage = "url(../assets/ui/header_close_bl_03.png)";
+                   setTimeout(function(){document.getElementById("close-btn").style.backgroundImage = "url(../assets/ui/header_close_bl_01.png)";},100);
+                     }
+                   })
+                   $("#close-btn").hover(function(){
+                     document.getElementById("close-btn").style.backgroundImage = "url(../assets/ui/header_close_bl_02.png)";}
+                     ,function(){
+                     document.getElementById("close-btn").style.backgroundImage = "";
+                    })
+           };
+           document.onreadystatechange =  () => {
+               if (document.readyState == "complete") {
+                   init();
+               }
+           };
+       })();
+       </script>
      </div>
   </div>
 
-  <form action="/action_page.php">
-    <p>Language for interface</p>
+  <form class="lang_choice" action="">
+    <p class="lang_entry">Language for interface</p>
     <input type="radio" id="Eng" name="US_English" value="val_Eng">
-    <label for="Eng">US English</label><br>
+    <label class="en" for="Eng">US English</label><br>
     <input type="radio" id="Jap" name="Japanese" value="val_jap">
-    <label for="Jap">Japanese</label><br>
+    <label class="en" for="Jap">Japanese</label>
+    <br><br><br>
 
     <input id="add-btn"type="submit" value="Submit">
   </form>
+  <div class="final_btns">
+    <div class="btn_group">
+      <button class="save_btns" type="button" name="button">Save</button>
+      <button class="save_btns" type="button" name="button">Cancel</button>
+    </div>
+  </div>
+
   </body>
 </html>
