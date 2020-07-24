@@ -9,7 +9,39 @@ body {
     background: black;
 }
 
+#logo{
+  padding-left: 10px;
+  /* padding-top: 32px; */
+  vertical-align: middle;
+  /* margin-top: 10px; */
+  color: white;
+}
 
+#title-bar{
+  display: flex;
+  -webkit-app-region: drag;
+  background: #100f0f;;
+}
+
+#title-bar-btns{
+  margin-left: auto;
+  -webkit-app-region: no-drag;
+}
+
+#close-btn{
+  background: url(../ui/header_close_bl_01.png);
+  height: 20px;
+}
+
+#max-btn{
+  background: url(../ui/header_full_bl_01.png);
+  height: 20px;
+}
+
+#min-btn{
+  background: url(../ui/header_min_bl_01.png);
+  height: 20px;
+}
 /* Setup video */
 
 #video {
