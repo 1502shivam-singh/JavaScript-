@@ -8,11 +8,85 @@
     <link rel="stylesheet" href="../assets/css/main.css">
     <script>let $ = require('jquery');</script>
     <script src="index.js"></script>
-    <!-- <script src="app\node_modules\jquery\dist\jquery.js" charset="utf-8"></script> -->
-
 </head>
 
 <body>
+      <div id="title-bar">
+       <div id="title">
+         <span id="logo">Reactor:C</span>
+       </div>
+       <div id="title-bar-btns">
+          <button class="nav_btn" id="min-btn"></button>
+          <button class="nav_btn" id="max-btn"></button>
+          <button class="nav_btn" id="close-btn"></button>
+       </div>
+    </div>
+        <script>
+        (function () {
+            // Retrieve remote BrowserWindow
+            const {BrowserWindow} = require('electron').remote
+
+            function init() {
+                // Minimize task
+                $('#min-btn').on({
+                  click: function(){
+                          var window = BrowserWindow.getFocusedWindow();
+                          window.minimize();
+                  },
+                  mousedown: function() {
+                    document.getElementById("min-btn").style.backgroundImage = "url(../assets/ui/header_min_bl_03.png)";
+                    setTimeout(function(){document.getElementById("min-btn").style.backgroundImage = "url(../assets/ui/header_min_bl_01.png)";},100);
+                      }
+                    })
+                    $("#min-btn").hover(function(){
+                      document.getElementById("min-btn").style.backgroundImage = "url(../assets/ui/header_min_bl_02.png)";}
+                      ,function(){
+                      document.getElementById("min-btn").style.backgroundImage = "";
+                     })
+                // Maximize window
+                $('#max-btn').on({
+                  click: function(){
+                        var window = BrowserWindow.getFocusedWindow();
+                        if(window.isMaximized()){
+                            window.unmaximize();
+                        }else{
+                            window.maximize();
+                        }
+                  },
+                  mousedown: function() {
+                    document.getElementById("max-btn").style.backgroundImage = "url(../assets/ui/header_full_bl_03.png)";
+                    setTimeout(function(){document.getElementById("max-btn").style.backgroundImage = "url(../assets/ui/header_full_bl_01.png)";},100);
+                      }
+                    })
+                    $("#max-btn").hover(function(){
+                      document.getElementById("max-btn").style.backgroundImage = "url(../assets/ui/header_full_bl_02.png)";}
+                      ,function(){
+                      document.getElementById("max-btn").style.backgroundImage = "";
+                     })
+                // Close app
+                $('#close-btn').on({
+                  click: function(){
+                        var window = BrowserWindow.getFocusedWindow();
+                        window.close();
+                  },
+                  mousedown: function() {
+                    document.getElementById("close-btn").style.backgroundImage = "url(../assets/ui/header_close_bl_03.png)";
+                    setTimeout(function(){document.getElementById("close-btn").style.backgroundImage = "url(../assets/ui/header_close_bl_01.png)";},100);
+                      }
+                    })
+                    $("#close-btn").hover(function(){
+                      document.getElementById("close-btn").style.backgroundImage = "url(../assets/ui/header_close_bl_02.png)";}
+                      ,function(){
+                      document.getElementById("close-btn").style.backgroundImage = "";
+                     })
+            };
+            document.onreadystatechange =  () => {
+                if (document.readyState == "complete") {
+                    init();
+                }
+            };
+        })();
+        </script>
     <video id="video" width="550" height="352"></video>
     <audio id="audio"></audio>
 
@@ -62,23 +136,6 @@
                   }
                   }
                   })
-           //        if(document.getElementById("pause_btn").style.backgroundImage == ""){
-           //        $("#pause_btn").hover(function(){
-           // // or hover instead of enter/leave
-           //            document.getElementById("pause_btn").style.backgroundImage = "url(../assets/ui/pausing_bl_02.png)";}
-           //        ,function(){
-           //          document.getElementById("pause_btn").style.backgroundImage = "";
-           //        })
-           //      }
-           //      else{
-           //        $("#pause_btn").hover(function(){
-           // // or hover instead of enter/leave
-           //            document.getElementById("pause_btn").style.backgroundImage = "url(../assets/ui/playing_bl_02.png)";}
-           //        ,function(){
-           //          document.getElementById("pause_btn").style.backgroundImage = "url(../assets/ui/playing_bl_01.png)";
-           //        })
-           //      }
-
               </script>
             <button class="nav_btn"  id="playback_btn"></button>
             <script>
@@ -238,6 +295,27 @@
               $('#preference').on({
                 click: function(){
                     //API endpoint for preference
+                    //Retrieve remote BrowserWindow
+                    const {BrowserWindow} = require('electron').remote
+                    const path = require('path')
+                    pref_win = new BrowserWindow({
+                      minWidth: 600,
+                      width: 300,
+                      height: 600,
+                      minHeight: 300,
+                        frame:false,
+                        show: true, // Show and maximize later
+                        //icon: path.join(__dirname, 'assets', 'icons', 'main_icon.ico'),
+                        resizable: true,
+                    })
+
+                    pref_win.loadURL(url.format({
+                        pathname: path.join(__dirname, 'pref.html'),
+                        protocol: 'file:',
+                        slashes: true,
+                    }))
+
+                    pref_win.webContents.openDevTools()
                 },
                 mousedown: function() {
                   document.getElementById("preference").style.backgroundImage = "url(../assets/ui/preferences_bl_03.png)";
