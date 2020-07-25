@@ -28,54 +28,58 @@ body{
   background: #100f0f;
 }
 
+#title-bar-btns{
+  -webkit-app-region: no-drag;
+}
+
+.close_btn_right{
+  -webkit-app-region: no-drag;
+}
+
 #lang-btn{
   background-color: rgba(109, 109, 109, 0.61);
-  border-radius: 25px;
+  /* border-radius: 25px; */
   width: 70px;
-  margin-right: 7px;
+  /* margin-right: 7px; */
 }
 #lang-btn:hover{
-  border-color: blue;
+  background-color: gray;
 }
 
 #web-btn{
   background-color: rgba(109, 109, 109, 0.61);
-  border-radius: 25px;
+  /* border-radius: 25px; */
 }
 #web-btn:hover{
-  border-color: blue;
+  background-color: gray;
 }
 
 #sign-btn{
   background-color: rgba(109, 109, 109, 0.61);
-  border-radius: 25px;
 }
 #sign-btn:hover{
-  border-color: blue;
+  background-color: gray;
 }
 
 #hotkey-btn{
   background-color: rgba(109, 109, 109, 0.61);
-  border-radius: 25px;
 }
 #hotkey-btn:hover{
-  border-color: blue;
+  background-color: gray;
 }
 
 #theme-btn{
   background-color: rgba(109, 109, 109, 0.61);
-  border-radius: 25px;
 }
 #theme-btn:hover{
-  border-color: blue;
+  background-color: gray;
 }
 
 #Others-btn{
   background-color: rgba(109, 109, 109, 0.61);
-  border-radius: 25px;
 }
 #Others-btn:hover{
-  border-color: blue;
+  background-color: gray;
 }
 
 #close-btn{
@@ -84,7 +88,7 @@ body{
   width: 20px;
 }
 #close-btn:hover{
-  border-color: blue;
+  background-color: gray;
 }
 
 .option-name{
@@ -117,7 +121,7 @@ body{
   display: flex;
   margin-left: auto;
   margin-right: 2%;
-  margin-top: 15%;
+  margin-top: 10%;
 }
 
 .en{
@@ -138,4 +142,17 @@ body{
   margin-left: auto;
   margin-right: 2%;
   margin-bottom: 2%;
+}
+
+.save_btns{
+  background-color: rgba(109, 109, 109, 0.61);
+  line-height: 1px;
+  border: none;
+  outline: none;
+  height: 25px;
+  width: 60px;
+  /* filter: grayscale(100%) brightness(2.5); */
+}
+.save_btns:hover{
+  background-color: gray;
 }
