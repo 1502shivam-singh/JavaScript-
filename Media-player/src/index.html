@@ -300,8 +300,8 @@
                     const path = require('path')
                     pref_win = new BrowserWindow({
                       minWidth: 600,
-                      width: 300,
-                      height: 600,
+                      width: 600,
+                      height: 300,
                       minHeight: 300,
                         frame:false,
                         show: true, // Show and maximize later
@@ -315,7 +315,7 @@
                         slashes: true,
                     }))
 
-                    pref_win.webContents.openDevTools()
+                    //pref_win.webContents.openDevTools()
                 },
                 mousedown: function() {
                   document.getElementById("preference").style.backgroundImage = "url(../assets/ui/preferences_bl_03.png)";
@@ -333,6 +333,26 @@
               $('#quality').on({
                 click: function(){
                     //API endpoint for quality
+                    const {BrowserWindow} = require('electron').remote
+                    const path = require('path')
+                    pref_win = new BrowserWindow({
+                      minWidth: 140,
+                      width: 140,
+                      height: 250,
+                      minHeight: 250,
+                        frame:false,
+                        show: true, // Show and maximize later
+                        //icon: path.join(__dirname, 'assets', 'icons', 'main_icon.ico'),
+                        resizable: true,
+                    })
+
+                    pref_win.loadURL(url.format({
+                        pathname: path.join(__dirname, 'quality.html'),
+                        protocol: 'file:',
+                        slashes: true,
+                    }))
+
+                    //pref_win.webContents.openDevTools()
                 },
                 mousedown: function() {
                   document.getElementById("quality").style.backgroundImage = "url(../assets/ui/quality_bg_bl_03.png)";
@@ -345,21 +365,21 @@
                     document.getElementById("quality").style.backgroundImage = "";
                    })
               </script>
-            <button class="nav_btn" id="audio"></button>
+            <button class="nav_btn" id="sound"></button>
               <script>
-              $("#audio").on({
+              $("#sound").on({
                 click: function(){
-                    if(document.getElementById("audio").style.backgroundImage == "")
+                    if(document.getElementById("sound").style.backgroundImage == "")
                     {
-                      document.getElementById("audio").style.backgroundImage = "url(../assets/ui/volume_on_bl_01.png)";
+                      document.getElementById("sound").style.backgroundImage = "url(../assets/ui/volume_on_bl_02.png)";
                       //API endpoint for audio
                     }
                     else{
-                      document.getElementById("audio").style.backgroundImage = "";
+                      document.getElementById("sound").style.backgroundImage = "";
                       //API endpoint for audio
                     }
                   }
-                })
+                });
               </script>
             <input class="volume-bar" type="range" min="0" max="10">
           </div>
@@ -368,12 +388,11 @@
     <div class="bottom-bar">
       <button class="nav_btn" id="left-ext"></button>
         <input class="url_bar" type="text" placeholder="Search..">
+
       <button class="nav_btn" id="right-ext"></button>
     </div>
 
     </div>
-
-    <!--  -->
 </body>
 
 </html>
