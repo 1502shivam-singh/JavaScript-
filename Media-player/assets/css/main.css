@@ -14,7 +14,8 @@ body {
   /* padding-top: 32px; */
   vertical-align: middle;
   /* margin-top: 10px; */
-  color: white;
+  color: #9E9E9E;
+  font-family: sans-serif;
 }
 
 #title-bar{
@@ -378,9 +379,9 @@ background-image: url(../ui/pausing_bl_01.png);
     font-size: 9px;
 }
 
-#audio {
+#sound {
     /* margin-left: 20px; */
-    background-image: url(../ui/volume_on_bl_02.png);
+    background-image: url(../ui/volume_on_bl_01.png);
 }
 
 #left-ext {
