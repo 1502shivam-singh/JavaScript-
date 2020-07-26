@@ -1,4 +1,4 @@
-html {
+﻿html {
     height: 100%;
 }
 
@@ -300,6 +300,16 @@ body {
   background: url(../ui/volume_bar_bl_01.png);
 }
 
+.volume-bar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    /* background: url(../ui/seek_button.svg);
+    filter: grayscale(100%) brightness(2.5); */
+    cursor: pointer;
+}
+
 .bottom-bar{
   display: flex;
 }
@@ -309,6 +319,15 @@ body {
   height: 21px;
   width: 486px;
   color: white;
+}
+
+.search_btn{
+  background: url(../ui/arrow_url.png);
+  margin-top: auto;
+  width: 15px;
+  margin-left: 1%;
+  height: 9px;
+  margin-bottom: auto;
 }
 /* Set image for each button */
 
