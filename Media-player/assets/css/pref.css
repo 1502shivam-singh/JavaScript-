@@ -153,7 +153,110 @@ body{
   width: 60px;
   /* filter: grayscale(100%) brightness(2.5); */
 }
+
 .save_btns:hover{
   background-color: gray;
 }
 
+.sites{
+  display: flex;
+}
+
+.web_info{
+  margin-right: 5%;
+  color: white;
+  font-family: sans-serif;
+  font-size: 1rem;
+
+}
+
+.spec_btn_grp{
+  line-height: 1px;
+}
+
+.rem{
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: 2%;
+}
+
+.url_bar{
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+.hkey{
+  margin-left: auto;
+  margin-right: 2%;
+}
+
+.e1{
+  background-color: white;
+  height: 34px;
+  padding-bottom: 1%;
+  padding-left: 1%;
+}
+
+.c1{
+  color: black;
+  padding-bottom: 1%;
+}
+
+.e2{
+  background-color: gray;
+  height: 34px;
+  padding-bottom: 1%;
+  padding-left: 1%;
+}
+
+.c2{
+  color: white;
+  padding-bottom: 1%;
+}
+
+.extras{
+  margin-left: 4.9%;
+}
+
+.spec_btn{
+  margin-left: auto;
+  width: 120px;
+  margin-right: 2%;
+}
+
+.snap_info{
+  width: 200px;
+  line-height: 2;
+}
+
+.snap_info_btn{
+  margin-top: 1%; 
+}
+
+.spec_bar{
+  height: 25px;
+}
+
+.spec_row{
+  line-height: 1px;
+}
+
+.show_hide_web{
+  display: none;
+}
+.show_hide_hotkey{
+  display: none;
+}
+.show_hide_lang{
+  display: block;
+}
+.show_hide_theme{
+  display: none;
+}
+.show_hide_Other{
+  display: none;
+}
+.show_hide_sign{
+  display: none;
+}
