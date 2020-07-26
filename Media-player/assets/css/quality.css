@@ -1,0 +1,42 @@
+body{
+  background-color: #100f0f;
+  opacity: 0.7;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.heading{
+  color: white;
+  font-family: sans-serif;
+  margin-left: 5%;
+  font-size: 1.5rem;
+}
+
+.qua_btns{
+  margin-left: 5%;
+}
+
+.sel-btns{
+  display: block;
+  line-height: 1px;
+  text-align: left;
+  margin-bottom: 6%;
+  /* margin-right: auto; */
+  /* margin-left: 5%; */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #100f0f;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  height: 25px;
+  color: white;
+  width: 100%;
+  /* filter: grayscale(100%) brightness(2.5); */
+  padding: 0;
+  /* flex-shrink: 0; */
+}
+
+.sel-btns:hover{
+  background-color: gray;
+}
