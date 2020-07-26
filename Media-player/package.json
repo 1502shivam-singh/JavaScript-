@@ -1,0 +1,28 @@
+{
+    "name": "ReactorC",
+    "version": "1.0.0",
+    "description": "A Media Player",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron .",
+        "package": "electron-packager . --asar --overwrite=true --icon=assets/icons/main_icon.ico",
+        "dist": "electron-builder",
+        "pack": "electron-builder --dir"
+    },
+    "build": {
+        "icon": "assets/icons/main_icon.ico"
+    },
+    "keywords": [],
+    "author": "Shivam Singh <shivam152002@gmail.com>",
+    "license": "MIT",
+    "devDependencies": {
+        "electron": "^2.0.2",
+        "electron-builder": "^20.44.4",
+        "electron-packager": "^12.1.0"
+    },
+    "dependencies": {
+        "jquery": "^3.5.1",
+        "npm": "^6.1.0",
+        "trash": "^4.3.0"
+    }
+}
