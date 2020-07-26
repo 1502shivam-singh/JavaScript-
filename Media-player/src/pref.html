@@ -27,38 +27,41 @@
 
        <button class="nav_btn" id="Others-btn">
        <p class="option-name">Others</p></button>
+
+       <script>
+
+       // $(".nav_btn").hover(function(){
+       //   document.querySelector(".nav_btn").style.bgColor = "blue";}
+       //   ,function(){
+       //   document.querySelector(".nav_btn").style.bgColor = "";
+       //  })
+
+       </script>
      </div>
      <div class="close_btn_right">
-       <button class="nav_btn" id="close-btn"></button>
+       <button class="nav_btn close" id="close-btn"></button>
        <script>
-       (function () {
-           // Retrieve remote BrowserWindow
-           const {BrowserWindow} = require('electron').remote
+         (function () {
+             // Retrieve remote BrowserWindow
+             const {BrowserWindow} = require('electron').remote
 
-           function init() {
-               // Close app
-               $('#close-btn').on({
-                 click: function(){
-                       var window = BrowserWindow.getFocusedWindow();
-                       window.close();
-                 },
-                 mousedown: function() {
-                   document.getElementById("close-btn").style.backgroundImage = "url(../assets/ui/header_close_bl_03.png)";
-                   setTimeout(function(){document.getElementById("close-btn").style.backgroundImage = "url(../assets/ui/header_close_bl_01.png)";},100);
-                     }
-                   })
-                   $("#close-btn").hover(function(){
-                     document.getElementById("close-btn").style.backgroundImage = "url(../assets/ui/header_close_bl_02.png)";}
-                     ,function(){
-                     document.getElementById("close-btn").style.backgroundImage = "";
-                    })
-           };
-           document.onreadystatechange =  () => {
-               if (document.readyState == "complete") {
-                   init();
-               }
-           };
-       })();
+             function init() {
+                 // Close app
+                 $('.close').on({
+
+                   click: function(){
+                         var window = BrowserWindow.getFocusedWindow();
+                         //document.getElementById("quality").innerHTML="$('.sel-btns').innerHTML;
+                         window.close();
+                   },
+                 })
+             };
+             document.onreadystatechange =  () => {
+                 if (document.readyState == "complete") {
+                     init();
+                 }
+             };
+         })();
        </script>
      </div>
   </div>
@@ -71,12 +74,12 @@
     <label class="en" for="Jap">Japanese</label>
     <br><br><br>
 
-    <input id="add-btn"type="submit" value="Submit">
+    <input id="add-btn" class="save_btns" type="submit" value="Submit">
   </form>
   <div class="final_btns">
     <div class="btn_group">
-      <button class="save_btns" type="button" name="button">Save</button>
-      <button class="save_btns" type="button" name="button">Cancel</button>
+      <button class="save_btns close" id="save_btn" type="button" name="button">Save</button>
+      <button class="save_btns close" id="cancel_btn" type="button" name="button">Cancel</button>
     </div>
   </div>
 
