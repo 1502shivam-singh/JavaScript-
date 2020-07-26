@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Quality</title>
+    <link rel="stylesheet" href="../assets/css/quality.css">
+    <script>let $ = require('jquery');</script>
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <p class="heading">Quality</p>
+    <div class="qua_btns">
+      <button class="sel-btns" id="btn-sel" type="button" name="button">1080p</button>
+      <button class="sel-btns" id="btn-sel" type="button" name="button">720p</button>
+      <button class="sel-btns" id="btn-sel" type="button" name="button">360p</button>
+    </div>
+    <script>
+    (function () {
+        // Retrieve remote BrowserWindow
+        const {BrowserWindow} = require('electron').remote
+
+        function init() {
+            // Close app
+            $('.sel-btns').on({
+
+              click: function(){
+                    var window = BrowserWindow.getFocusedWindow();
+                    //document.getElementById("quality").innerHTML=document.getElementById('btn-sel').innerHTML;
+                    window.close();
+              },
+            })
+        };
+        document.onreadystatechange =  () => {
+            if (document.readyState == "complete") {
+                init();
+            }
+        };
+    })();
+    </script>
+  </body>
+</html>
