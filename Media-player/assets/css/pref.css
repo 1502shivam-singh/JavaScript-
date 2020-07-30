@@ -6,6 +6,8 @@ body{
   background-color: #050505;
 }
 
+  /* background-color: #050505; */
+
 .top_btn{
   border-top-left-radius: 4.7px;
   border-top-right-radius: 4.7px;
@@ -32,6 +34,7 @@ body{
   -webkit-app-region: drag;
   background: #0e0c0c;
 }
+  /* background: #0e0c0c; */
 
 #title-bar-btns{
   -webkit-app-region: no-drag;
