@@ -296,19 +296,19 @@ $('#snapshot').on({
 
 
 //Code of videosetting button (start)
-$('#vidosetting').on({
+$('#videosetting').on({
   click: function(){
       //API endpoint for vidosetting
   },
   mousedown: function() {
-    document.getElementById("vidosetting").style.backgroundImage = "url(../assets/ui/video_setting_bl_03.png)";
-    setTimeout(function(){document.getElementById("vidosetting").style.backgroundImage = "url(../assets/ui/video_setting_bl_01.png)";},100);
+    document.getElementById("videosetting").style.backgroundImage = "url(../assets/ui/video_setting_bl_03.png)";
+    setTimeout(function(){document.getElementById("videosetting").style.backgroundImage = "url(../assets/ui/video_setting_bl_01.png)";},100);
       }
     })
-    $("#vidosetting").hover(function(){
-      document.getElementById("vidosetting").style.backgroundImage = "url(../assets/ui/video_setting_bl_02.png)";}
+    $("#videosetting").hover(function(){
+      document.getElementById("videosetting").style.backgroundImage = "url(../assets/ui/video_setting_bl_02.png)";}
       ,function(){
-      document.getElementById("vidosetting").style.backgroundImage = "";
+      document.getElementById("videosetting").style.backgroundImage = "";
 })
 //Code of videosetting button (end)
 
@@ -325,10 +325,10 @@ $('#preference').on({
       pref_win = new BrowserWindow({
         //parent: win,
         //modal: true,
-        minWidth: 600,
-        width: 600,
-        height: 300,
-        minHeight: 300,
+        minWidth: 685,
+        width: 685,
+        height: 368,
+        minHeight: 368,
           frame:false,
           show: true, // Show and maximize later
           icon: path.join(__dirname, 'assets', 'icons', 'main_icon.ico'),
@@ -415,4 +415,3 @@ $("#sound").on({
 
 
 //Code of quality window
-
