@@ -64,6 +64,60 @@
               ,function(){
               document.getElementById("close-btn").style.backgroundImage = "";
              })
+
+
+            //On mini Player
+            $('#min-btn-m').on({
+              click: function(){
+                      var window = BrowserWindow.getFocusedWindow();
+                      window.minimize();
+              },
+              mousedown: function() {
+                document.getElementById("min-btn-m").style.backgroundImage = "url(../assets/ui/header_min_bl_03.png)";
+                setTimeout(function(){document.getElementById("min-btn-m").style.backgroundImage = "url(../assets/ui/header_min_bl_01.png)";},100);
+                  }
+                })
+                $("#min-btn-m").hover(function(){
+                  document.getElementById("min-btn-m").style.backgroundImage = "url(../assets/ui/header_min_bl_02.png)";}
+                  ,function(){
+                  document.getElementById("min-btn-m").style.backgroundImage = "";
+                 })
+            // Maximize window
+            $('#max-btn-m').on({
+              click: function(){
+                    var window = BrowserWindow.getFocusedWindow();
+                    if(window.isMaximized()){
+                        window.unmaximize();
+                    }else{
+                        window.maximize();
+                    }
+              },
+              mousedown: function() {
+                document.getElementById("max-btn-m").style.backgroundImage = "url(../assets/ui/header_full_bl_03.png)";
+                setTimeout(function(){document.getElementById("max-btn-m").style.backgroundImage = "url(../assets/ui/header_full_bl_01.png)";},100);
+                  }
+                })
+                $("#max-btn-m").hover(function(){
+                  document.getElementById("max-btn-m").style.backgroundImage = "url(../assets/ui/header_full_bl_02.png)";}
+                  ,function(){
+                  document.getElementById("max-btn-m").style.backgroundImage = "";
+                 })
+            // Close app
+            $('#close-btn-m').on({
+              click: function(){
+                    var window = BrowserWindow.getFocusedWindow();
+                    window.close();
+              },
+              mousedown: function() {
+                document.getElementById("close-btn-m").style.backgroundImage = "url(../assets/ui/header_close_bl_03.png)";
+                setTimeout(function(){document.getElementById("close-btn-m").style.backgroundImage = "url(../assets/ui/header_close_bl_01.png)";},100);
+                  }
+                })
+                $("#close-btn-m").hover(function(){
+                  document.getElementById("close-btn-m").style.backgroundImage = "url(../assets/ui/header_close_bl_02.png)";}
+                  ,function(){
+                  document.getElementById("close-btn-m").style.backgroundImage = "";
+                 })
     };
     document.onreadystatechange =  () => {
         if (document.readyState == "complete") {
@@ -73,42 +127,63 @@
 })();
 //Code for titlebar of mainwindow (end)
 
-//Code of pause/play button (start)
+var digit = 1;
+
 $('#pause_btn').on({
   click: function(){
-    if(document.getElementById("pause_btn").style.backgroundImage == "")
+    if(digit === 1)
+      //document.querySelector("#pause_btn").style.backgroundImage == "")
     {
-      document.getElementById("pause_btn").style.backgroundImage = "url(../assets/ui/playing_bl_01.png)";
+      console.log(digit);
+      document.querySelector("#pause_btn").style.backgroundImage = "url(../assets/ui/playing_bl_01.png)";
+
     }
     else{
-      document.getElementById("pause_btn").style.backgroundImage = "";
+      console.log(digit);
+      console.log(document.querySelector("#pause_btn").style.backgroundImage);
+      document.querySelector("#pause_btn").style.backgroundImage = "";
     }
   },
   mousedown: function() {
   // :active state
-  if(document.getElementById("pause_btn").style.backgroundImage == "")
+  if(digit === 1)
+    //document.querySelector("#pause_btn").style.backgroundImage == "")
   {
     //setTimeout(function(){document.getElementById("pause_btn").style.backgroundImage = "url(../assets/ui/playing_bl_03.png)";},50);
-    document.getElementById("pause_btn").style.backgroundImage = "url(../assets/ui/playing_bl_03.png)";
-    setTimeout(function(){document.getElementById("pause_btn").style.backgroundImage = "url(../assets/ui/playing_bl_01.png)";},100);
+    document.querySelector("#pause_btn").style.backgroundImage = "url(../assets/ui/playing_bl_03.png)";
+    setTimeout(function(){document.querySelector("#pause_btn").style.backgroundImage = "url(../assets/ui/playing_bl_01.png)";},100);
+    //digit = 1;
+    console.log(digit);
+    digit = 2;
   }
   else{
     //setTimeout(function(){document.getElementById("pause_btn").style.backgroundImage = "url(../assets/ui/pausing_bl_03.png)";},50);
-    document.getElementById("pause_btn").style.backgroundImage = "url(../assets/ui/pausing_bl_03.png)";
-    setTimeout(function(){document.getElementById("pause_btn").style.backgroundImage = "";},100);
+    document.querySelector("#pause_btn").style.backgroundImage = "url(../assets/ui/pausing_bl_03.png)";
+    setTimeout(function(){document.querySelector("#pause_btn").style.backgroundImage = "";},100);
+    //digit = 2;
+    console.log(digit);
+    digit = 1;
     }
   },
-  mouseup: function() {
-  // on click release
-  if(document.getElementById("pause_btn").style.backgroundImage == "")
-  {
-    document.getElementById("pause_btn").style.backgroundImage = "url(../assets/ui/playing_bl_03.png)";
-  }
-  else{
-    document.getElementById("pause_btn").style.backgroundImage = "";
-  }
-  }
 })
+
+$("#pause_btn").bind('mouseover', function() {
+    //var old_color = $(this).css("background-color");
+    if(digit === 1){
+    $(this)[0].style.backgroundImage = 'url(../assets/ui/pausing_bl_02.png)';
+  }
+  else {
+    $(this)[0].style.backgroundImage = 'url(../assets/ui/playing_bl_02.png)';
+  }
+    $("#pause_btn").bind('mouseout', function () {
+      if(digit === 1){
+        $(this)[0].style.backgroundImage = "url(../assets/ui/pausing_bl_01.png)";}
+        else {
+          $(this)[0].style.backgroundImage = 'url(../assets/ui/playing_bl_01.png)';
+        }
+      });
+});
+
 //Code of pause/play button (end)
 
 
@@ -143,64 +218,109 @@ $('#always_on_top_btn').on({
       //API endpoint for always_on_top_btn
   }
 });
+
 //Code of always_on_top_btn button (end)
 
 
 //Code of next_btn button (start)
+var digit_next = 1;
+
 $('#next_btn').on({
   click: function(){
     var x = document.getElementById("title-bar");
     if (x.style.display === "none") {
       x.style.display = "flex";
+      $("#ui_cnt").css("height","95px");
+      $("#ui_cnt").css("background","black");
+      $(".bottom-bar").css("display","flex");
+      $("#left-ext-m").css("display","none");
+      $("#right-ext-m").css("display","none");
+
+      $(".left_buttons").css("display","block");
+      $(".volume-bar").css("height","");
+      $("#sound").css("display","inline-block");
+      $("#snapshot").css("display","inline-block");
+      $("#sync_button").css("display","inline-block");
+      $("#title-bar-btns-m").css("display","none");
+      $("#min-btn-m").css("display","none");
+      $("#max-btn-m").css("display","none");
+      $("#close-btn-m").css("display","none");
 
     } else {
       x.style.display = "none";
-    }
+      $("#ui_cnt").css("height","81px");
+      $("#ui_cnt").css("background","rgba(0, 0, 0, 0.3)");
+      $(".bottom-bar").css("display","none");
+      $("#left-ext-m").css("display","flex");
+      $("#right-ext-m").css("display","flex");
 
-    if(document.getElementById("next_btn").style.backgroundImage == "")
+      $(".left_buttons").css("display","-webkit-inline-box");
+      $(".volume-bar").css("height","20px");
+      $("#sound").css("display","none");
+      $("#snapshot").css("display","none");
+      $("#sync_button").css("display","none");
+      $("#title-bar-btns-m").css("display","flex");
+      $("#min-btn-m").css("display","flex");
+      $("#max-btn-m").css("display","flex");
+      $("#close-btn-m").css("display","flex");
+
+    }
+    if(digit_next === 1)
+      //document.querySelector("#pause_btn").style.backgroundImage == "")
     {
-      document.getElementById("next_btn").style.backgroundImage = "url(../assets/ui/mini_player_bl_01.png)";
+      console.log(digit_next);
+      document.querySelector("#next_btn").style.backgroundImage = "url(../assets/ui/mini_player_bl_01.png)";
     }
     else{
-      document.getElementById("next_btn").style.backgroundImage = "";
+      console.log(digit_next);
+      console.log(document.querySelector("#next_btn").style.backgroundImage);
+      document.querySelector("#next_btn").style.backgroundImage = "";
     }
+
+    //Edited ends here
+
       //API endpoint for next_btn
   },
   mousedown: function() {
 
-      if(document.getElementById("next_btn").style.backgroundImage == "")
-      {
-        //setTimeout(function(){document.getElementById("pause_btn").style.backgroundImage = "url(../assets/ui/playing_bl_03.png)";},50);
-        document.getElementById("next_btn").style.backgroundImage = "url(../assets/ui/mini_player_bl_03.png)";
-        setTimeout(function(){document.getElementById("next_btn").style.backgroundImage = "url(../assets/ui/mini_player_bl_01.png)";},100);
-      }
-      else{
-        //setTimeout(function(){document.getElementById("pause_btn").style.backgroundImage = "url(../assets/ui/pausing_bl_03.png)";},50);
-        document.getElementById("next_btn").style.backgroundImage = "url(../assets/ui/standard_player_bl_03.png)";
-        setTimeout(function(){document.getElementById("next_btn").style.backgroundImage = "";},100);
-        }
-    },
-        mouseup: function() {
-        // on click release
-        if(document.getElementById("next_btn").style.backgroundImage == "")
+        //Edited starts here
+        if(digit_next === 1)
         {
-          document.getElementById("next_btn").style.backgroundImage = "url(../assets/ui/mini_player_bl_03.png)";
+          //setTimeout(function(){document.getElementById("pause_btn").style.backgroundImage = "url(../assets/ui/playing_bl_03.png)";},50);
+          document.querySelector("#next_btn").style.backgroundImage = "url(../assets/ui/mini_player_bl_03.png)";
+          setTimeout(function(){document.querySelector("#next_btn").style.backgroundImage = "url(../assets/ui/mini_player_bl_01.png)";},100);
+          //digit = 1;
+          console.log(digit_next);
+          digit_next = 2;
         }
         else{
-          document.getElementById("next_btn").style.backgroundImage = "";
-        }
+          //setTimeout(function(){document.getElementById("pause_btn").style.backgroundImage = "url(../assets/ui/pausing_bl_03.png)";},50);
+          document.querySelector("#next_btn").style.backgroundImage = "url(../assets/ui/standard_player_bl_03.png)";
+          setTimeout(function(){document.querySelector("#next_btn").style.backgroundImage = "";},100);
+          //digit = 2;
+          console.log(digit_next);
+          digit_next = 1;
+          }
+        //Edited ends here
     }
   })
-//     mouseup: function() {
-//     // on click release
-//     if(document.getElementById("next_btn").style.backgroundImage == "")
-//     {
-//       document.getElementById("next_btn").style.backgroundImage = "url(../assets/ui/standard_player_bl_03.png)";
-//     }
-//     else{
-//       document.getElementById("next_btn").style.backgroundImage = "";
-//     }
-// }
+
+  $("#next_btn").bind('mouseover', function() {
+      //var old_color = $(this).css("background-color");
+      if(digit_next === 1){
+      $(this)[0].style.backgroundImage = 'url(../assets/ui/standard_player_bl_02.png)';
+    }
+    else {
+      $(this)[0].style.backgroundImage = 'url(../assets/ui/mini_player_bl_02.png)';
+    }
+      $("#next_btn").bind('mouseout', function () {
+        if(digit_next === 1){
+          $(this)[0].style.backgroundImage = "url(../assets/ui/standard_player_bl_01.png)";}
+          else {
+            $(this)[0].style.backgroundImage = 'url(../assets/ui/mini_player_bl_01.png)';
+          }
+        });
+  });
 
 
 //Code of next_btn button (end)
@@ -330,9 +450,11 @@ $('#preference').on({
         height: 368,
         minHeight: 368,
           frame:false,
+          transparent: true,
           show: true, // Show and maximize later
           icon: path.join(__dirname, 'assets', 'icons', 'main_icon.ico'),
-          resizable: true,
+          resizable: false,
+          transparent: true,
       })
 
       pref_win.loadURL(url.format({
@@ -369,6 +491,7 @@ $('#quality').on({
         width: 140,
         height: 250,
         minHeight: 250,
+        transparent: true,
           frame:false,
           show: true, // Show and maximize later
           //icon: path.join(__dirname, 'assets', 'icons', 'main_icon.ico'),
@@ -381,7 +504,7 @@ $('#quality').on({
           slashes: true,
       }))
 
-      //pref_win.webContents.openDevTools()
+      //qual_win.webContents.openDevTools()
   },
   mousedown: function() {
     document.getElementById("quality").style.backgroundImage = "url(../assets/ui/quality_bg_bl_03.png)";
