@@ -23,7 +23,15 @@
     <video id="video" width="550" height="352"></video>
     <audio id="audio"></audio>
 
+
     <div id="ui_cnt">
+      <div id="title-bar-btns-m">
+        <div class="button-m">
+          <button class="nav_btn" id="min-btn-m"></button>
+          <button class="nav_btn" id="max-btn-m"></button>
+          <button class="nav_btn" id="close-btn-m"></button>
+        </div>
+      </div>
       <div class="flexing">
         <input id='seek_bar' type="range" step="0.1">
 
@@ -32,7 +40,8 @@
 
         <div id="btn_bar">
           <div class="left_buttons">
-            <button class="nav_btn" id="pause_btn"></button>
+            <button class="nav_btn" id="left-ext-m"></button>
+            <button class="nav_btn " id="pause_btn" ></button>
             <button class="nav_btn" id="playback_btn"></button>
             <button class="nav_btn" id="always_on_top_btn"></button>
             <button class="nav_btn"  id="next_btn"></button>
@@ -46,13 +55,15 @@
             <button class="nav_btn"  id="quality">-</button>
             <button class="nav_btn"  id="sound"></button>
             <input class="volume-bar" type="range" min="0" max="10">
+            <button class="nav_btn" id="right-ext-m"></button>
           </div>
         </div>
 
     <div class="bottom-bar">
       <button class="nav_btn" id="left-ext"></button>
-        <input class="url_bar" type="text" placeholder="Search..">
+        <input class="url_bar" type="text" placeholder="Address here...">
         <button class="nav_btn search_btn" type="button" name="button"></button>
+
       <button class="nav_btn" id="right-ext"></button>
     </div>
 
