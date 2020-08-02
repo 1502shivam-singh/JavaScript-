@@ -1,5 +1,5 @@
 body{
-  background-color: #100f0f;
+  background-color: rgba(16, 15, 15, 0.95);
   opacity: 0.7;
   margin-left: 0px;
   margin-right: 0px;
@@ -25,7 +25,7 @@ body{
   /* margin-left: 5%; */
   background-position: center;
   background-repeat: no-repeat;
-  background-color: #100f0f;
+  background-color: rgba(16, 15, 15, 0);
   cursor: pointer;
   border: none;
   outline: none;
