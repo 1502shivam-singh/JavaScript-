@@ -1,9 +1,3 @@
-// ﻿const { ipcRenderer } = require('electron')
-// const path = require('path')
-// const url = require('url')
-// const trash = require('trash')
-// const fs = require('fs')
-
 
 //Code for titlebar of mainwindow (start)
 
@@ -128,6 +122,7 @@
 //Code for titlebar of mainwindow (end)
 
 var digit = 1;
+var sec_digit = 3;
 
 $('#pause_btn').on({
   click: function(){
@@ -135,13 +130,13 @@ $('#pause_btn').on({
       //document.querySelector("#pause_btn").style.backgroundImage == "")
     {
       console.log(digit);
-      document.querySelector("#pause_btn").style.backgroundImage = "url(../assets/ui/playing_bl_01.png)";
+      document.querySelector("#pause_btn").style.backgroundImage = "";
 
     }
     else{
       console.log(digit);
       console.log(document.querySelector("#pause_btn").style.backgroundImage);
-      document.querySelector("#pause_btn").style.backgroundImage = "";
+      document.querySelector("#pause_btn").style.backgroundImage = "url(../assets/ui/playing_bl_01.png)";
     }
   },
   mousedown: function() {
@@ -169,14 +164,14 @@ $('#pause_btn').on({
 
 $("#pause_btn").bind('mouseover', function() {
     //var old_color = $(this).css("background-color");
-    if(digit === 1){
+    if(digit === 1 && sec_digit === 3){
     $(this)[0].style.backgroundImage = 'url(../assets/ui/pausing_bl_02.png)';
   }
   else {
     $(this)[0].style.backgroundImage = 'url(../assets/ui/playing_bl_02.png)';
   }
     $("#pause_btn").bind('mouseout', function () {
-      if(digit === 1){
+      if(digit === 1 && sec_digit === 3){
         $(this)[0].style.backgroundImage = "url(../assets/ui/pausing_bl_01.png)";}
         else {
           $(this)[0].style.backgroundImage = 'url(../assets/ui/playing_bl_01.png)';
@@ -269,12 +264,12 @@ $('#next_btn').on({
       //document.querySelector("#pause_btn").style.backgroundImage == "")
     {
       console.log(digit_next);
-      document.querySelector("#next_btn").style.backgroundImage = "url(../assets/ui/mini_player_bl_01.png)";
+      document.querySelector("#next_btn").style.backgroundImage = "";
     }
     else{
       console.log(digit_next);
       console.log(document.querySelector("#next_btn").style.backgroundImage);
-      document.querySelector("#next_btn").style.backgroundImage = "";
+      document.querySelector("#next_btn").style.backgroundImage = "url(../assets/ui/mini_player_bl_01.png)";
     }
 
     //Edited ends here
@@ -287,15 +282,15 @@ $('#next_btn').on({
         if(digit_next === 1)
         {
           //setTimeout(function(){document.getElementById("pause_btn").style.backgroundImage = "url(../assets/ui/playing_bl_03.png)";},50);
-          document.querySelector("#next_btn").style.backgroundImage = "url(../assets/ui/mini_player_bl_03.png)";
-          setTimeout(function(){document.querySelector("#next_btn").style.backgroundImage = "url(../assets/ui/mini_player_bl_01.png)";},100);
+          document.querySelector("#next_btn").style.backgroundImage = "url(../assets/ui/standard_player_bl_03.png)";
+          setTimeout(function(){document.querySelector("#next_btn").style.backgroundImage = "url(../assets/ui/standard_player_bl_01.png)";},100);
           //digit = 1;
           console.log(digit_next);
           digit_next = 2;
         }
         else{
           //setTimeout(function(){document.getElementById("pause_btn").style.backgroundImage = "url(../assets/ui/pausing_bl_03.png)";},50);
-          document.querySelector("#next_btn").style.backgroundImage = "url(../assets/ui/standard_player_bl_03.png)";
+          document.querySelector("#next_btn").style.backgroundImage = "url(../assets/ui/mini_player_bl_03.png)";
           setTimeout(function(){document.querySelector("#next_btn").style.backgroundImage = "";},100);
           //digit = 2;
           console.log(digit_next);
