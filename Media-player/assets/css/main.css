@@ -26,9 +26,18 @@ body {
   background: #100f0f;;
 }
 
+.button-m{
+  display:flex;
+  margin-left: auto;
+}
+
 #title-bar-btns{
   margin-left: auto;
   -webkit-app-region: no-drag;
+}
+#title-bar-btns-m{
+  display: none;
+  /* -webkit-app-region: no-drag; */
 }
 
 #close-btn{
@@ -42,6 +51,24 @@ body {
 }
 
 #min-btn{
+  background: url(../ui/header_min_bl_01.png);
+  height: 18px;
+}
+
+#close-btn-m{
+  display: none;
+  background: url(../ui/header_close_bl_01.png);
+  height: 18px;
+}
+
+#max-btn-m{
+  display: none;
+  background: url(../ui/header_full_bl_01.png);
+  height: 18px;
+}
+
+#min-btn-m{
+  display: none;
   background: url(../ui/header_min_bl_01.png);
   height: 18px;
 }
@@ -87,6 +114,7 @@ body {
       /* left: 0%; */
       /* transform: translate(-142%); */
       height: 7px;
+      margin-left: 4.5px;
       border-color: white;
       border-style: groove;
       border-width: thin;
@@ -107,6 +135,7 @@ body {
         /* transform: translate(-142%); */
         border-color: white;
         height: 7px;
+        margin-left: 4.5px;
         border-radius: 0px;
         border-width: thin;
         border-style: groove;
@@ -129,6 +158,7 @@ body {
         border-radius: 0px;
         border-color: white;
         border-width: thin;
+        margin-left: 4.5px;
         /* margin: 10px 0px 10px 5px; */
         border-style: groove;
         background: url(../ui/play_bar_bl.png);
@@ -150,6 +180,7 @@ body {
         border-width: thin;
         border-color: white;
         border-radius: 0px;
+        margin-left: 4.5px;
         /* margin: 10px 0px 10px 5px; */
         background: url(../ui/play_bar_bl.png);
         border-style: groove;
@@ -170,6 +201,7 @@ body {
         height: 7px;
         border-width: thin;
         border-radius: 0px;
+        margin-left: 4.5px;
         /* margin: 10px 0px 10px 5px; */
         border-color: white;
         border-style: groove;
@@ -241,7 +273,7 @@ body {
 
 @media (max-width: 650px) {
   #time {
-    margin-left: 0;
+    margin-left: 3px;
     /* position: relative; */
     /* display: inline-block; */
     font: 12px Arial;
@@ -389,6 +421,14 @@ body {
   display: flex;
 }
 
+/* On mini-player
+.bottom-bar{
+    display: none;
+      margin-top: 7px;
+      margin-bottom: 1px;
+  display: flex;
+} */
+
 .url_bar{
   /* background: url(../ui/url_bar_bl.png); */
   height: 18px;
@@ -406,38 +446,236 @@ body {
   .url_bar{
     /* background: url(../ui/url_bar_bl.png); */
     background-color: black;
-    height: 21px;
+    height: 18px;
     border-radius: 5px;
     border-width: 1.5px;
 border-color: #ff9900;
-    width: 148px;
+    width: 100%;
     color: white;
   }
 }
 
 .search_btn{
+  position: relative;
+  right: 0;
   background: url(../ui/arrow_url.png);
   margin-top: auto;
   width: 15px;
   margin-left: 1%;
-  height: 9px;
+  height: 9.1px;
   margin-bottom: auto;
 }
+
+@media (max-width: 246px) {
+  .search_btn{
+    position: relative;
+    right: 0;
+    background: url(../ui/arrow_url.png);
+    margin-top: auto;
+    width: 15px;
+    margin-left: -8%;
+    height: 8.1px;
+    margin-bottom: 13px;
+  }
+}
+
+@media (max-width: 325px) and (min-width:246px) {
+  .search_btn{
+    position: relative;
+    right: 0;
+    background: url(../ui/arrow_url.png);
+    margin-top: auto;
+    width: 15px;
+    margin-left: -6.5%;
+    height: 8.1px;
+    margin-bottom: 13px;
+  }
+}
+
+@media (max-width: 385px) and (min-width:325px) {
+  .search_btn{
+    position: relative;
+    right: 0;
+    background: url(../ui/arrow_url.png);
+    margin-top: auto;
+    width: 15px;
+    margin-left: -5.4%;
+    height: 8.1px;
+    margin-bottom: 13px;
+  }
+}
+
+@media (max-width: 450px) and (min-width:385px) {
+  .search_btn{
+    position: relative;
+    right: 0;
+    background: url(../ui/arrow_url.png);
+    margin-top: auto;
+    width: 15px;
+    margin-left: -4.7%;
+    height: 8.1px;
+    margin-bottom: 13px;
+  }
+}
+
+@media (max-width: 540px) and (min-width:450px) {
+  .search_btn{
+    position: relative;
+    right: 0;
+    background: url(../ui/arrow_url.png);
+    margin-top: auto;
+    width: 15px;
+    margin-left: -4%;
+    height: 8.1px;
+    margin-bottom: 13px;
+  }
+}
+
+@media (max-width: 620px) and (min-width:540px) {
+  .search_btn{
+    position: relative;
+    right: 0;
+    background: url(../ui/arrow_url.png);
+    margin-top: auto;
+    width: 15px;
+    margin-left: -3.3%;
+    height: 8.1px;
+    margin-bottom: 13px;
+  }
+}
+
+@media (max-width: 772px) and (min-width:620px) {
+  .search_btn{
+    position: relative;
+    right: 0;
+    background: url(../ui/arrow_url.png);
+    margin-top: auto;
+    width: 15px;
+    margin-left: -3%;
+    height: 8.1px;
+    margin-bottom: 13px;
+  }
+}
+
+/* @media (max-width: 1100px) and (min-width:620px) {
+  .search_btn{
+    position: relative;
+    right: 0;
+    background: url(../ui/arrow_url.png);
+    margin-top: auto;
+    width: 15px;
+    margin-left: -2%;
+    height: 8.1px;
+    margin-bottom: 13px;
+  }
+} */
+
+@media (max-width: 1100px) and (min-width:772px) {
+  .search_btn{
+    position: relative;
+    right: 0;
+    background: url(../ui/arrow_url.png);
+    margin-top: auto;
+    width: 15px;
+    margin-left: -1.8%;
+    height: 8.1px;
+    margin-bottom: 13px;
+  }
+}
+
+@media (max-width: 1280px) and (min-width:1100px)
+/*  */
+{
+  .search_btn{
+    position: relative;
+    right: 0;
+    background: url(../ui/arrow_url.png);
+    margin-top: auto;
+    width: 15px;
+    margin-left: -1.9%;
+    height: 8.1px;
+    margin-bottom: 13px;
+  }
+}
+
+
+@media (max-width: 1500px) and (min-width:1280px)
+/*  */
+{
+  .search_btn{
+    position: relative;
+    right: 0;
+    background: url(../ui/arrow_url.png);
+    margin-top: auto;
+    width: 15px;
+    margin-left: -1.5%;
+    height: 8.1px;
+    margin-bottom: 13px;
+  }
+}
+
+@media (max-width: 1600px) and (min-width:1500px)
+/*  */
+{
+  .search_btn{
+    position: relative;
+    right: 0;
+    background: url(../ui/arrow_url.png);
+    margin-top: auto;
+    width: 15px;
+    margin-left: -1.35%;
+    height: 8.1px;
+    margin-bottom: 13px;
+  }
+}
+
+/* @media (max-width: 1544px) and (min-width:1100px) {
+  .search_btn{
+    position: relative;
+    right: 0;
+    background: url(../ui/arrow_url.png);
+    margin-top: auto;
+    width: 15px;
+    margin-left: %;
+    height: 8.1px;
+    margin-bottom: 13px;
+  }
+} */
 /* Set image for each button */
 
 #pause_btn {
   /* margin-right: 20px; */
-      margin-right: 0px;
-background-image: url(../ui/pausing_bl_01.png);
+  background-image: url(../ui/pausing_bl_01.png);
+  margin-right: 0px;
 }
-
 /* #pause_btn:hover{
   background-image: url(../ui/pausing_bl_02.png);
 } */
 
+/* .pause_btn:hover{
+  background-image: url(../ui/pausing_bl_02.png);
+} */
+
+.hoverP{
+
+}
+
+.hoverP:hover{
+    background-image: url(../ui/pausing_bl_02.png);
+}
+
+.playing_btn_b {
+  /* margin-right: 20px; */
+
+}
+
+.playing_btn_b:hover{
+  background-image: url(../ui/playing_bl_02.png);
+}
+
 #playback_btn {
   margin-left: 0px;
-margin-right: 0px;
+  margin-right: 0px;
     background-image: url(../ui/playback_bl_01.png);
 }
 /*
@@ -454,7 +692,7 @@ margin-right: 0px;
 }
 
 #always_on_top_btn:hover{
-  background-image: url(../ui/always_on_top_active_bl_02.png);
+  background-image: url(../ui/always_on_top_active__bl_01.png);
 }
 
 /* These buttons hide */
@@ -541,7 +779,7 @@ margin-right: 0px;
     background-image: url(../ui/quality_bg_bl_01.png);
     color: white;
     font-size: 9px;
-    width: 42px;
+    width: 43px;
 }
 @media (max-width: 415px) {
   #quality {
@@ -566,14 +804,44 @@ margin-right: 0px;
 
 #left-ext {
     /* margin-left: 20px; */
-  height: 37px;
+  height: 30px;
   margin-left: 0px;
   background-image: url(../ui/edge_bl_l.png);
 }
+#left-ext-m {
+  display: none;
+    /* margin-left: 20px; */
+  height: 53px;
+  margin-left: -8px;
+  background-image: url(../ui/edge_bl_l.png);
+}
+
+
+/* css of left-ext on mini-player
+#left-ext {
+  height: 33px;
+  margin-left: -8px;
+  background-image: url(../ui/edge_bl_l.png);
+} */
 
 #right-ext {
   margin-left: auto;
   /* margin-left: 20px; */
-  height: 37px;
+  height: 30px;
   background-image: url(../ui/edge_bl_r.png);
 }
+#right-ext-m {
+  display: none;
+  margin-right: -4px;
+  margin-top: 10px;
+  margin-left: auto;
+  /* margin-left: 20px; */
+  height: 33px;
+  background-image: url(../ui/edge_bl_r.png);
+}
+/* css of right-ext on mini-player
+#right-ext {
+  height: 45px;
+  margin-right: -4px;
+  background-image: url(../ui/edge_bl_l.png);
+} */
