@@ -127,7 +127,6 @@ var sec_digit = 3;
 $('#pause_btn').on({
   click: function(){
     if(digit === 1)
-      //document.querySelector("#pause_btn").style.backgroundImage == "")
     {
       console.log(digit);
       document.querySelector("#pause_btn").style.backgroundImage = "";
@@ -142,20 +141,15 @@ $('#pause_btn').on({
   mousedown: function() {
   // :active state
   if(digit === 1)
-    //document.querySelector("#pause_btn").style.backgroundImage == "")
   {
-    //setTimeout(function(){document.getElementById("pause_btn").style.backgroundImage = "url(../assets/ui/playing_bl_03.png)";},50);
     document.querySelector("#pause_btn").style.backgroundImage = "url(../assets/ui/playing_bl_03.png)";
     setTimeout(function(){document.querySelector("#pause_btn").style.backgroundImage = "url(../assets/ui/playing_bl_01.png)";},100);
-    //digit = 1;
     console.log(digit);
     digit = 2;
   }
   else{
-    //setTimeout(function(){document.getElementById("pause_btn").style.backgroundImage = "url(../assets/ui/pausing_bl_03.png)";},50);
     document.querySelector("#pause_btn").style.backgroundImage = "url(../assets/ui/pausing_bl_03.png)";
     setTimeout(function(){document.querySelector("#pause_btn").style.backgroundImage = "";},100);
-    //digit = 2;
     console.log(digit);
     digit = 1;
     }
@@ -163,7 +157,6 @@ $('#pause_btn').on({
 })
 
 $("#pause_btn").bind('mouseover', function() {
-    //var old_color = $(this).css("background-color");
     if(digit === 1 && sec_digit === 3){
     $(this)[0].style.backgroundImage = 'url(../assets/ui/pausing_bl_02.png)';
   }
@@ -261,7 +254,6 @@ $('#next_btn').on({
 
     }
     if(digit_next === 1)
-      //document.querySelector("#pause_btn").style.backgroundImage == "")
     {
       console.log(digit_next);
       document.querySelector("#next_btn").style.backgroundImage = "";
@@ -272,36 +264,26 @@ $('#next_btn').on({
       document.querySelector("#next_btn").style.backgroundImage = "url(../assets/ui/mini_player_bl_01.png)";
     }
 
-    //Edited ends here
-
       //API endpoint for next_btn
   },
   mousedown: function() {
-
-        //Edited starts here
         if(digit_next === 1)
         {
-          //setTimeout(function(){document.getElementById("pause_btn").style.backgroundImage = "url(../assets/ui/playing_bl_03.png)";},50);
           document.querySelector("#next_btn").style.backgroundImage = "url(../assets/ui/standard_player_bl_03.png)";
           setTimeout(function(){document.querySelector("#next_btn").style.backgroundImage = "url(../assets/ui/standard_player_bl_01.png)";},100);
-          //digit = 1;
           console.log(digit_next);
           digit_next = 2;
         }
         else{
-          //setTimeout(function(){document.getElementById("pause_btn").style.backgroundImage = "url(../assets/ui/pausing_bl_03.png)";},50);
           document.querySelector("#next_btn").style.backgroundImage = "url(../assets/ui/mini_player_bl_03.png)";
           setTimeout(function(){document.querySelector("#next_btn").style.backgroundImage = "";},100);
-          //digit = 2;
           console.log(digit_next);
           digit_next = 1;
           }
-        //Edited ends here
     }
   })
 
   $("#next_btn").bind('mouseover', function() {
-      //var old_color = $(this).css("background-color");
       if(digit_next === 1){
       $(this)[0].style.backgroundImage = 'url(../assets/ui/standard_player_bl_02.png)';
     }
@@ -438,8 +420,6 @@ $('#preference').on({
       const url = require('url')
 
       pref_win = new BrowserWindow({
-        //parent: win,
-        //modal: true,
         minWidth: 685,
         width: 685,
         height: 368,
@@ -457,8 +437,6 @@ $('#preference').on({
           protocol: 'file:',
           slashes: true,
       }))
-
-      //pref_win.webContents.openDevTools()
   },
   mousedown: function() {
     document.getElementById("preference").style.backgroundImage = "url(../assets/ui/preferences_bl_03.png)";
@@ -481,7 +459,6 @@ $('#quality').on({
       const path = require('path')
       const url = require('url')
       qual_win = new BrowserWindow({
-        //parent: win,
         minWidth: 140,
         width: 140,
         height: 250,
@@ -489,7 +466,6 @@ $('#quality').on({
         transparent: true,
           frame:false,
           show: true, // Show and maximize later
-          //icon: path.join(__dirname, 'assets', 'icons', 'main_icon.ico'),
           resizable: true,
       })
 
@@ -498,8 +474,6 @@ $('#quality').on({
           protocol: 'file:',
           slashes: true,
       }))
-
-      //qual_win.webContents.openDevTools()
   },
   mousedown: function() {
     document.getElementById("quality").style.backgroundImage = "url(../assets/ui/quality_bg_bl_03.png)";
@@ -529,7 +503,3 @@ $("#sound").on({
     }
   });
   //Code of sound button (end)
-
-
-
-//Code of quality window
